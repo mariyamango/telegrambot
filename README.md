@@ -27,3 +27,15 @@ See the [Help](HELP.md) file for details.
 
 ## License
 This project is Apache License 2.0 - see the [LICENSE](LICENSE) file for details
+
+## Deployment
+Deployment process is as simple as it could be:
+Required software:
+- terminal for running bash scripts
+- docker
+- docker-compose
+
+To deploy application switch to needed branch and run bash script:
+$ bash start.sh ${bot_username} ${bot_token}
+
+That's all.
