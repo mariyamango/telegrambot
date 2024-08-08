@@ -3,6 +3,7 @@ package com.github.mariyamango.tb.command;
 import com.github.mariyamango.tb.bot.JavaRushTelegramBot;
 import com.github.mariyamango.tb.service.SendBotMessageService;
 import com.github.mariyamango.tb.service.SendBotMessageServiceImpl;
+import com.github.mariyamango.tb.service.TelegramUserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -19,6 +20,7 @@ abstract class AbstractCommandTest {
 
     protected JavaRushTelegramBot javarushBot = Mockito.mock(JavaRushTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(javarushBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
     abstract String getCommandMessage();

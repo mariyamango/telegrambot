@@ -9,3 +9,6 @@
 
 ## 0.3.0-SNAPSHOT
 * STEP_4_TB-13: added deployment process to the project
+
+## 0.4.0-SNAPSHOT
+* STEP_5_TB-1: added repository layer
