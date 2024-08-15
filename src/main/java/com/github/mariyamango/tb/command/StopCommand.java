@@ -4,6 +4,8 @@ import com.github.mariyamango.tb.service.SendBotMessageService;
 import com.github.mariyamango.tb.service.TelegramUserService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import static com.github.mariyamango.tb.command.CommandUtils.getChatId;
+
 /**
  * Stop {@link Command}.
  */
@@ -22,8 +24,8 @@ public class StopCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), STOP_MESSAGE);
-        telegramUserService.findByChatId(update.getMessage().getChatId().toString())
+        sendBotMessageService.sendMessage(getChatId(update), STOP_MESSAGE);
+        telegramUserService.findByChatId(getChatId(update))
                 .ifPresent(it -> {
                     it.setActive(false);
                     telegramUserService.save(it);

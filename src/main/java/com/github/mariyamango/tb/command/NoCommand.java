@@ -3,6 +3,8 @@ package com.github.mariyamango.tb.command;
 import com.github.mariyamango.tb.service.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import static com.github.mariyamango.tb.command.CommandUtils.getChatId;
+
 /**
  * No {@link Command}.
  */
@@ -20,6 +22,6 @@ public class NoCommand implements Command{
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), NO_MESSAGE);
+        sendBotMessageService.sendMessage(getChatId(update), NO_MESSAGE);
     }
 }

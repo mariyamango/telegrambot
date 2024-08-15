@@ -3,6 +3,8 @@ package com.github.mariyamango.tb.command;
 import com.github.mariyamango.tb.service.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
+import static com.github.mariyamango.tb.command.CommandUtils.getChatId;
+
 /**
  * Unknown {@link Command}.
  */
@@ -19,6 +21,6 @@ public class UnknownCommand implements Command{
 
     @Override
     public void execute(Update update) {
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), UNKNOWN_MESSAGE);
+        sendBotMessageService.sendMessage(getChatId(update), UNKNOWN_MESSAGE);
     }
 }
