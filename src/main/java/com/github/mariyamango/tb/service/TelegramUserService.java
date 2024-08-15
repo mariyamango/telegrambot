@@ -2,6 +2,7 @@ package com.github.mariyamango.tb.service;
 
 
 import com.github.mariyamango.tb.repository.entity.TelegramUser;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,5 +32,5 @@ public interface TelegramUserService {
      * @param chatId provided Chat ID
      * @return {@link TelegramUser} with provided chat ID or null otherwise.
      */
-    Optional<TelegramUser> findByChatId(String chatId);
+    Optional<TelegramUser> findByChatId(Long chatId);
 }

@@ -1,5 +1,7 @@
 package com.github.mariyamango.tb.command;
 
+import com.github.mariyamango.tb.javarushclient.JavaRushGroupClient;
+import com.github.mariyamango.tb.service.GroupSubService;
 import com.github.mariyamango.tb.service.SendBotMessageService;
 import com.github.mariyamango.tb.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
@@ -10,6 +12,8 @@ import org.mockito.Mockito;
 
 import java.util.Arrays;
 
+import static java.util.Collections.singletonList;
+
 @DisplayName("Unit-level testing for CommandContainer")
 public class CommandContainerTest {
     
@@ -19,7 +23,12 @@ public class CommandContainerTest {
     public void init(){
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
-        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
+        JavaRushGroupClient groupClient = Mockito.mock(JavaRushGroupClient.class);
+        GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
+        commandContainer = new CommandContainer(sendBotMessageService,
+                telegramUserService,
+                groupClient,
+                groupSubService);
     }
 
     @Test

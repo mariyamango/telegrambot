@@ -13,6 +13,7 @@ import java.util.Optional;
  */
 @Service
 public class TelegramUserServiceImpl implements TelegramUserService{
+
     private final TelegramUserRepository telegramUserRepository;
 
     @Autowired
@@ -32,7 +33,7 @@ public class TelegramUserServiceImpl implements TelegramUserService{
     }
 
     @Override
-    public Optional<TelegramUser> findByChatId(String chatId) {
+    public Optional<TelegramUser> findByChatId(Long chatId) {
         return telegramUserRepository.findById(chatId);
     }
 }
