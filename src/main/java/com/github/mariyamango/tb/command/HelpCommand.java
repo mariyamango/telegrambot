@@ -21,11 +21,12 @@ public class HelpCommand implements Command{
 
             + "Working with group subscriptions:\n"
             + "%s - subscribe to a group of articles\n"
+            + "%s - unsubscribe from a group of articles\n"
             + "%s - get a list of groups you are subscribed to\n\n"
 
             + "%s - get statistics\n"
             + "%s - get help by working with me\n",
-            START.getCommandName(), STOP.getCommandName(), ADD_GROUP_SUB.getCommandName(),
+            START.getCommandName(), STOP.getCommandName(), ADD_GROUP_SUB.getCommandName(), DELETE_GROUP_SUB.getCommandName(),
             LIST_GROUP_SUB.getCommandName(), STAT.getCommandName(), HELP.getCommandName());
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
