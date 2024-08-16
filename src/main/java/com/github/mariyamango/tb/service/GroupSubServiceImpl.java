@@ -46,17 +46,17 @@ public class GroupSubServiceImpl implements GroupSubService{
     }
 
     @Override
-    public GroupSub save(GroupSub groupSub) {
-        return null;
+    public GroupSub save(GroupSub groupSub){
+        return groupSubRepository.save(groupSub);
     }
 
     @Override
-    public Optional<GroupSub> findById(Integer id) {
-        return Optional.empty();
+    public Optional<GroupSub> findById(Integer id){
+        return groupSubRepository.findById(id);
     }
 
     @Override
-    public List<GroupSub> findAll() {
-        return List.of();
+    public List<GroupSub> findAll(){
+        return groupSubRepository.findAll();
     }
 }
